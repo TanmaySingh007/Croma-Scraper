@@ -1,91 +1,16 @@
-# Project Setup and Running Guide
-
-This guide explains how to set up and run both the backend (Flask) and frontend (Vue.js) for this project.
-
----
-
-## 1. Backend (Python Flask)
-
-**Requirements:**
-- Python 3.x
-- (Recommended) Virtual environment
-
-**Steps:**
-1. Open a terminal and navigate to the backend directory:
-   ```powershell
-   cd project/backend
-   ```
-2. (Optional) Create and activate a virtual environment:
-   ```powershell
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
-   ```
-3. Install dependencies:
-   ```powershell
-   pip install -r requirements.txt
-   ```
-4. Run the backend server:
-   ```powershell
-   python app.py
-   ```
-   The backend should now be running, usually at http://127.0.0.1:5000/
-
----
-
-## 2. Frontend (Vue.js)
-
-**Requirements:**
-- Node.js (v14+ recommended)
-- npm (comes with Node.js)
-
-**Steps:**
-1. Open a new terminal window and navigate to the frontend directory:
-   ```powershell
-   cd project/frontend
-   ```
-2. Install dependencies:
-   ```powershell
-   npm install
-   ```
-3. Start the development server:
-   ```powershell
-   npm run serve
-   ```
-   The frontend should now be running, usually at http://localhost:8080/
-
----
-
-## 3. Accessing the App
-
-- **Frontend:** Open [http://localhost:8080/](http://localhost:8080/) in your browser.
-- **Backend:** The frontend will make API requests to the backend at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) (or as configured).
-
----
-
-## Windows PowerShell Quick Commands
-
-Here are the exact commands to run both backend and frontend in Windows PowerShell:
-
-### Backend
-```powershell
-cd project/backend
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python app.py
-```
-
-### Frontend (in a new PowerShell window)
-```powershell
-cd project/frontend
-npm install
-npm run serve
-```
-
----
-
-## Troubleshooting
-
-- If you get errors about missing packages, double-check you ran the install commands in both backend and frontend.
-- Make sure both servers are running in separate terminals.
-- If ports are busy, you may need to change them in the config or scripts.
+Croma ScraperA powerful and efficient web scraper designed to extract product information from the Croma India e-commerce website. This tool is ideal for market research, price monitoring, data analysis, or building custom product catalogs.Table of ContentsFeaturesTechnologies UsedSetup and InstallationUsageOutput ExampleContributingLicenseFeaturesProduct Data Extraction: Scrapes key product details such as:Product NamePrice (Current and Original, if available)Product URLCategory/Sub-categoryBrandProduct Rating (if available)Number of Reviews (if available)Availability StatusFlexible Output: Saves extracted data into a structured format (e.g., CSV, JSON) for easy integration with other tools or databases.Pagination Handling: Navigates through multiple pages of search results or categories to ensure comprehensive data collection.Error Handling: Includes basic error handling for network issues or changes in website structure.Configurable: Easily adaptable to scrape different product categories or search queries.Technologies UsedPython 3.x: The primary programming language.Requests: For making HTTP requests to the Croma website.BeautifulSoup4: For parsing HTML content and extracting data.(Optional) Pandas: For efficient data manipulation and saving to CSV/Excel.(Optional) Selenium: If dynamic content loading (JavaScript rendering) requires a headless browser.Setup and InstallationFollow these steps to get the Croma Scraper up and running on your local machine.Clone the Repository:git clone https://github.com/TanmaySingh007/Croma-Scraper.git
+cd Croma-Scraper
+Create a Virtual Environment (Recommended):python -m venv venv
+# On Windows
+.\venv\Scripts\activate
+# On macOS/Linux
+source venv/bin/activate
+Install Dependencies:pip install -r requirements.txt
+(If requirements.txt is not present, you might need to install requests and beautifulsoup4 manually: pip install requests beautifulsoup4)UsageTo run the scraper, execute the main Python script. You might need to specify a category, search term, or product URL depending on the scraper's design.Example:# Assuming your main script is named `scraper.py`
+python scraper.py --category "mobiles" --output_file "mobiles_data.csv"
+(Adjust the command-line arguments --category, --output_file, etc., based on how your scraper.py is designed to accept inputs.)The scraper will then start fetching data and save it to the specified output file in your project directory.Output ExampleThe output file (e.g., products_data.csv) will typically contain columns similar to:Product Name,Brand,Price,Original Price,Rating,Reviews,Availability,Product URL,Category
+"Apple iPhone 14 (128GB, Midnight)",Apple,79900,79900,4.5,120,In Stock,https://www.croma.com/apple-iphone-14...,Smartphones
+"Samsung Galaxy S23 (256GB, Green)",Samsung,99999,109999,4.8,85,In Stock,https://www.croma.com/samsung-galaxy...,Smartphones
+"HP Pavilion Laptop 15-eg2000",HP,65000,75000,4.2,50,In Stock,https://www.croma.com/hp-pavilion-laptop...,Laptops
+# ... more product entries
+ContributingContributions are welcome! If you have suggestions for improvements, bug fixes, or new features, please feel free to:Fork the repository.Create a new branch (git checkout -b feature/your-feature-name).Make your changes.Commit your changes (git commit -m 'Add new feature').Push to the branch (git push origin feature/your-feature-name).Open a Pull Request.LicenseThis project is licensed under the MIT License - see the LICENSE file for details.
