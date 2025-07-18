@@ -1,16 +1,1 @@
-Croma ScraperA powerful and efficient web scraper designed to extract product information from the Croma India e-commerce website. This tool is ideal for market research, price monitoring, data analysis, or building custom product catalogs.Table of ContentsFeaturesTechnologies UsedSetup and InstallationUsageOutput ExampleContributingLicenseFeaturesProduct Data Extraction: Scrapes key product details such as:Product NamePrice (Current and Original, if available)Product URLCategory/Sub-categoryBrandProduct Rating (if available)Number of Reviews (if available)Availability StatusFlexible Output: Saves extracted data into a structured format (e.g., CSV, JSON) for easy integration with other tools or databases.Pagination Handling: Navigates through multiple pages of search results or categories to ensure comprehensive data collection.Error Handling: Includes basic error handling for network issues or changes in website structure.Configurable: Easily adaptable to scrape different product categories or search queries.Technologies UsedPython 3.x: The primary programming language.Requests: For making HTTP requests to the Croma website.BeautifulSoup4: For parsing HTML content and extracting data.(Optional) Pandas: For efficient data manipulation and saving to CSV/Excel.(Optional) Selenium: If dynamic content loading (JavaScript rendering) requires a headless browser.Setup and InstallationFollow these steps to get the Croma Scraper up and running on your local machine.Clone the Repository:git clone https://github.com/TanmaySingh007/Croma-Scraper.git
-cd Croma-Scraper
-Create a Virtual Environment (Recommended):python -m venv venv
-# On Windows
-.\venv\Scripts\activate
-# On macOS/Linux
-source venv/bin/activate
-Install Dependencies:pip install -r requirements.txt
-(If requirements.txt is not present, you might need to install requests and beautifulsoup4 manually: pip install requests beautifulsoup4)UsageTo run the scraper, execute the main Python script. You might need to specify a category, search term, or product URL depending on the scraper's design.Example:# Assuming your main script is named `scraper.py`
-python scraper.py --category "mobiles" --output_file "mobiles_data.csv"
-(Adjust the command-line arguments --category, --output_file, etc., based on how your scraper.py is designed to accept inputs.)The scraper will then start fetching data and save it to the specified output file in your project directory.Output ExampleThe output file (e.g., products_data.csv) will typically contain columns similar to:Product Name,Brand,Price,Original Price,Rating,Reviews,Availability,Product URL,Category
-"Apple iPhone 14 (128GB, Midnight)",Apple,79900,79900,4.5,120,In Stock,https://www.croma.com/apple-iphone-14...,Smartphones
-"Samsung Galaxy S23 (256GB, Green)",Samsung,99999,109999,4.8,85,In Stock,https://www.croma.com/samsung-galaxy...,Smartphones
-"HP Pavilion Laptop 15-eg2000",HP,65000,75000,4.2,50,In Stock,https://www.croma.com/hp-pavilion-laptop...,Laptops
-# ... more product entries
-ContributingContributions are welcome! If you have suggestions for improvements, bug fixes, or new features, please feel free to:Fork the repository.Create a new branch (git checkout -b feature/your-feature-name).Make your changes.Commit your changes (git commit -m 'Add new feature').Push to the branch (git push origin feature/your-feature-name).Open a Pull Request.LicenseThis project is licensed under the MIT License - see the LICENSE file for details.
+
